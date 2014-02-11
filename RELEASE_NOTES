@@ -1,4 +1,4 @@
-0.3.15
+0.3.16-SNAPSHOT
   - Fix Postgres Double support (#41)
 
 0.3.14
