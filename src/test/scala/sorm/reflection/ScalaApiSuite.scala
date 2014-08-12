@@ -1,12 +1,12 @@
 package sorm.reflection
 
 import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class ScalaApiSuite extends FunSuite with ShouldMatchers {
+class ScalaApiSuite extends FunSuite with Matchers {
   import ScalaApiSuite._
 
   import reflect.runtime.universe._
@@ -19,16 +19,13 @@ class ScalaApiSuite extends FunSuite with ShouldMatchers {
     typeOf[Artist].constructors should have length (3)
   }
   test("primary constructor") {
-    typeOf[Artist].constructors.head.paramss.flatten should have length (4)
+    typeOf[Artist].constructors.head.paramLists.flatten should have length (4)
   }
   test("javaClass of a local class") {
     typeOf[Artist].javaClass should equal(classOf[Artist])
   }
   test("javaClass of a wrapped in a static object class") {
     typeOf[StaticWrapper.WrappedClass].javaClass should equal(classOf[StaticWrapper.WrappedClass])
-  }
-  test("properties of types with mixins") {
-    typeOf[Artist with Mixin].properties should equal (typeOf[Artist].properties)
   }
 // //  requires different ordering of constructors
 // //  test("instance works") {

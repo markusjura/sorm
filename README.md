@@ -13,7 +13,7 @@ For more info, tutorials and documentation please visit the [official site](http
 
 ##Supported Scala versions
 
-2.10.*
+2.11.*
 
 ##Maven
 
@@ -22,13 +22,9 @@ SORM is distributed in Maven Central, here's a dependency to the latest release 
     <dependency>
       <groupId>org.sorm-framework</groupId>
       <artifactId>sorm</artifactId>
-      <version>0.3.15</version>
+      <version>0.4.1</version>
     </dependency>
 
 ##SBT
 
-    libraryDependencies += "org.sorm-framework" % "sorm" % "0.3.15"
-
----
-
-[![Build Status](https://travis-ci.org/sorm/sorm.png?branch=master)](https://travis-ci.org/sorm/sorm)
+    libraryDependencies += "org.sorm-framework" % "sorm" % "0.4.1"

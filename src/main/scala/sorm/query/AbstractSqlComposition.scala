@@ -8,9 +8,9 @@ import sorm.persisted._
 import sorm.abstractSql.{AbstractSql => AS}
 import sorm.abstractSql.Combinators._
 import Query._
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.LazyLogging
 
-object AbstractSqlComposition extends Logging {
+object AbstractSqlComposition extends LazyLogging {
 
   def primaryKeySelect
     ( query : Query )

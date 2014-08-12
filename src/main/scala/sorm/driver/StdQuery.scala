@@ -11,13 +11,13 @@ trait StdQuery { self: StdConnection with StdStatement =>
   def query
     [ T ]
     ( asql : Statement )
-    ( parse : ResultSetView => T = (_ : ResultSetView).indexedRowsTraversable.toList )
+    ( parse : ResultSetView => T )
     : T
     = query(statement(asql))(parse)
   def query
     [ T ]
     ( s : jdbc.Statement )
-    ( parse : ResultSetView => T = (_ : ResultSetView).indexedRowsTraversable.toList )
+    ( parse : ResultSetView => T )
     : T
     = connection.executeQuery(s)(parse)
 

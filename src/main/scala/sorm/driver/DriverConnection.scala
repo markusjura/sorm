@@ -15,12 +15,12 @@ trait DriverConnection {
   def query
     [ T ]
     ( asql : Statement )
-    ( parse : ResultSetView => T = (_ : ResultSetView).indexedRowsTraversable.toList )
+    ( parse : ResultSetView => T )
     : T
   def query
     [ T ]
     ( s : jdbc.Statement )
-    ( parse : ResultSetView => T = (_ : ResultSetView).indexedRowsTraversable.toList )
+    ( parse : ResultSetView => T )
     : T
   def now() : DateTime
   def listTables(): List[String]

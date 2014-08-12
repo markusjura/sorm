@@ -9,7 +9,7 @@ import jdbc._
 
 import sext._, embrace._
 import reflect.runtime.universe._
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.LazyLogging
 
 /**
  * The instance of SORM
@@ -42,7 +42,7 @@ object Instance {
 
   import org.joda.time.DateTime
 
-  trait Api extends Logging {
+  trait Api extends LazyLogging {
 
     protected val connector : Connector
 
@@ -206,7 +206,7 @@ object Instance {
       poolSize : Int = 1,
       initMode : InitMode = InitMode.Create,
       timeout : Int )
-    extends Logging
+    extends LazyLogging
   {
     import core.Initialization._
 
